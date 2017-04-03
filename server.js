@@ -16,7 +16,7 @@ app.use(express.static(__dirname + '/public'));
 app.use('/api',appRoutes);
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://ashwani:abcd1234@olympia.modulusmongo.net:27017/duS6exiq',function(err){
+mongoose.connect('mongodb://ashwani2797:abcd1234@ds141960.mlab.com:41960/meanstack',function(err){
 	if(err){
 		console.log('Not connected to database' + err);
 	} else {
