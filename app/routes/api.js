@@ -68,8 +68,8 @@ var transport = nodemailer.createTransport({
  				  from: 'Localhost Staff, staff@localhost.com',
 				  to: user.email,
 				  subject: 'Activation Link',
-				  text: 'Hello' +user.name +'Thanks for registering at localhost.com. Please click on the link below to complete your activation: http://localhost:8085/activate/'+ user.temporarytoken,
-				  html: 'Hello<strong>' +user.name +'</strong>,<br><br>Thanks for registering at localhost.com. Please click on the link below to complete your activation:<br><a href="http://localhost:8085/activate/'+ user.temporarytoken+'">http://localhost:8085/activate/</a>',
+				  text: 'Hello' +user.name +'Thanks for registering at localhost.com. Please click on the link below to complete your activation: http://trip-for-sure.herokuapp.com/activate/'+ user.temporarytoken,
+				  html: 'Hello<strong>' +user.name +'</strong>,<br><br>Thanks for registering at localhost.com. Please click on the link below to complete your activation:<br><a href="http://trip-for-sure.herokuapp.com/activate/'+ user.temporarytoken+'">http://trip-for-sure.herokuapp.com/activate/</a>',
 				}
 				console.log('Sending Mail');
 				transport.sendMail(message, function(error){
@@ -229,8 +229,8 @@ router.put('/resend',function(req,res){
 	 				  from: 'Localhost Staff, staff@localhost.com',
 					  to: user.email,
 					  subject: 'Activation Link request',
-					  text: 'Hello' +user.name +'You recently requested a new activation Link. Please click on the link below to complete your activation: http://localhost:8085/activate/'+ user.temporarytoken,
-					  html: 'Hello<strong>' +user.name +'</strong>,<br><br>You recently requested a new activation Link. Please click on the link below to complete your activation:<br><a href="http://localhost:8085/activate/'+ user.temporarytoken+'">http://localhost:8085/activate/</a>'
+					  text: 'Hello' +user.name +'You recently requested a new activation Link. Please click on the link below to complete your activation: http://trip-for-sure.herokuapp.com/activate/'+ user.temporarytoken,
+					  html: 'Hello<strong>' +user.name +'</strong>,<br><br>You recently requested a new activation Link. Please click on the link below to complete your activation:<br><a href="http://trip-for-sure.herokuapp.com/activate/'+ user.temporarytoken+'">http://trip-for-sure.herokuapp.com/activate/</a>'
 					}
 					console.log('Sending Mail');
 					transport.sendMail(message, function(error){
