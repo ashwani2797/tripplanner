@@ -65,11 +65,11 @@ var transport = nodemailer.createTransport({
 		else{
 
 				var message = {
- 				  from: 'Localhost Staff, staff@localhost.com',
+ 				  from: 'Trip For Sure',
 				  to: user.email,
 				  subject: 'Activation Link',
-				  text: 'Hello' +user.name +'Thanks for registering at localhost.com. Please click on the link below to complete your activation: http://trip-for-sure.herokuapp.com/activate/'+ user.temporarytoken,
-				  html: 'Hello<strong>' +user.name +'</strong>,<br><br>Thanks for registering at localhost.com. Please click on the link below to complete your activation:<br><a href="http://trip-for-sure.herokuapp.com/activate/'+ user.temporarytoken+'">http://trip-for-sure.herokuapp.com/activate/</a>',
+				  text: 'Hello' +user.name +'Thanks for registering at trip-for-sure.herokuapp.com. Please click on the link below to complete your activation: http://trip-for-sure.herokuapp.com/activate/'+ user.temporarytoken,
+				  html: 'Hello<strong>' +user.name +'</strong>,<br><br>Thanks for registering at trip-for-sure.herokuapp.com. Please click on the link below to complete your activation:<br><a href="http://trip-for-sure.herokuapp.com/activate/'+ user.temporarytoken+'">http://trip-for-sure.herokuapp.com/activate/</a>',
 				}
 				console.log('Sending Mail');
 				transport.sendMail(message, function(error){
@@ -168,9 +168,9 @@ var transport = nodemailer.createTransport({
 						}else{
 
 								var message = {
-				 				  from: 'Localhost Staff, staff@localhost.com',
+				 				  from: 'http://trip-for-sure.herokuapp.com',
 								  to: user.email,
-								  subject: 'Localhost account activated',
+								  subject: 'trip-for-sure account activated',
 								  text: 'Hello' +user.name +'Your account has been successfully activated',
 								  html: 'Hello<strong>' +user.name +'</strong><br><br><br>Your account has been successfully activated',
 								}
@@ -226,7 +226,7 @@ router.put('/resend',function(req,res){
 			} else {
 
 					var message = {
-	 				  from: 'Localhost Staff, staff@localhost.com',
+	 				  from: 'http://trip-for-sure.herokuapp.com',
 					  to: user.email,
 					  subject: 'Activation Link request',
 					  text: 'Hello' +user.name +'You recently requested a new activation Link. Please click on the link below to complete your activation: http://trip-for-sure.herokuapp.com/activate/'+ user.temporarytoken,
@@ -264,9 +264,9 @@ router.get('/resetusername/:email',function(req,res){
 			} else{
 
 					var message = {
-		 				  from: 'Localhost Staff, staff@localhost.com',
+		 				  from: 'http://trip-for-sure.herokuapp.com',
 						  to: user.email,
-						  subject: 'Localhost username requested',
+						  subject: 'trip-for-sure username requested',
 						  text: 'Hello' +user.name +'You recently requested a username. Please save it in your files :'+user.username,
 						  html: 'Hello<strong>' +user.name +'</strong>,<br><br>You recently requested a username. Please save it in your files :'+user.username,
 						}
@@ -307,11 +307,11 @@ router.put('/resetpassword',function(req,res){
 			res.json({ success:false ,message:err });
 				} else {
 					var message = {
-	 				  from: 'Localhost Staff, staff@localhost.com',
+	 				  from: 'http://trip-for-sure.herokuapp.com',
 					  to: user.email,
-					  subject: 'Localhost reset password request',
-					  text: 'Hello' +user.name +'You recently requested a Password reset. Please click on the link below to reset your password: http://localhost:8085/reset/'+ user.resettoken,
-					  html: 'Hello<strong>' +user.name +'</strong>,<br><br>You recently requested a a Password reset. Please click on the link below to reset your password:<br><a href="http://localhost:8085/reset/'+ user.resettoken+'">http://localhost:8085/newpassword/</a>'
+					  subject: 'trip-for-sure reset password request',
+					  text: 'Hello' +user.name +'You recently requested a Password reset. Please click on the link below to reset your password: http://trip-for-sure.herokuapp.com/reset/'+ user.resettoken,
+					  html: 'Hello<strong>' +user.name +'</strong>,<br><br>You recently requested a a Password reset. Please click on the link below to reset your password:<br><a href="http://trip-for-sure.herokuapp.com/reset/'+ user.resettoken+'">http://trip-for-sure.herokuapp.com/newpassword/</a>'
 					}						
 					    console.log('Sending Mail');
 						transport.sendMail(message, function(error){
@@ -369,11 +369,11 @@ router.put('/savepassword', function(req,res){
 			else {
 
 				var message = {
-		 				  from: 'Localhost Staff, staff@localhost.com',
+		 				  from: 'http://trip-for-sure.herokuapp.com',
 						  to: user.email,
-						  subject: 'Localhost reset password',
-						  text: 'Hello' +user.name +'This email is to notified you that your password is recently changed at localhost.com',
-						  html: 'Hello<strong>' +user.name +'</strong>,<br><br>YThis email is to notified you that your password is recently changed at localhost.com',
+						  subject: 'trip-for-sure reset password',
+						  text: 'Hello' +user.name +'This email is to notified you that your password is recently changed at trip-for-sure.herokuapp.com',
+						  html: 'Hello<strong>' +user.name +'</strong>,<br><br>YThis email is to notified you that your password is recently changed at http://trip-for-sure.herokuapp.com',
 						}
 						console.log('Sending Mail');
 						transport.sendMail(message, function(error){
